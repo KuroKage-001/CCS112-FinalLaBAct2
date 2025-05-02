@@ -1,0 +1,171 @@
+.score-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 40px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.6s ease-out;
+}
+
+.score-container h2 {
+  color: #2d3748;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score-details {
+  margin: 30px 0;
+  font-size: 1.3rem;
+  color: #4a5568;
+  line-height: 1.8;
+}
+
+.highlight {
+  color: #2ecc71;
+  font-weight: 700;
+  font-size: 1.6rem;
+  padding: 0 8px;
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #2ecc71, #27ae60);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underline 0.6s ease-out forwards 0.3s;
+}
+
+.percentage {
+  margin-top: 25px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.perfect-score-message {
+  margin: 30px 0;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(52, 152, 219, 0.1));
+  border-radius: 15px;
+  animation: popIn 0.5s ease-out forwards;
+}
+
+.perfect-score-message h3 {
+  font-size: 2rem;
+  color: #2ecc71;
+  margin-bottom: 10px;
+  animation: bounce 1s ease infinite;
+}
+
+.perfect-score-message p {
+  font-size: 1.2rem;
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.restart-button {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.restart-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.restart-button:active {
+  transform: translateY(-1px);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes underline {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .score-container {
+    padding: 30px 20px;
+    margin: 20px auto;
+  }
+
+  .score-container h2 {
+    font-size: 2rem;
+  }
+
+  .score-details {
+    font-size: 1.1rem;
+  }
+
+  .highlight {
+    font-size: 1.3rem;
+  }
+
+  .perfect-score-message h3 {
+    font-size: 1.6rem;
+  }
+
+  .perfect-score-message p {
+    font-size: 1.1rem;
+  }
+
+  .restart-button {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+  }
+} 
